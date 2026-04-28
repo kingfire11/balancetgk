@@ -5,6 +5,7 @@
 Telegram бот для проверки баланса API-ключей tkbk.io
 """
 
+import os
 import requests
 import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -26,6 +27,9 @@ logger = logging.getLogger(__name__)
 
 # Константы API
 API_BASE = "https://api.tkbk.io"
+
+# Токен бота
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8778052231:AAFYoWr4wayExTzQq-elaz0TPEyUww4AiV8")
 
 
 def get_api_id(api_key: str) -> str | None:
@@ -177,13 +181,11 @@ async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     """Главная функция запуска бота"""
-    # Вставьте ваш токен бота здесь
-    BOT_TOKEN = "8778052231:AAFYoWr4wayExTzQq-elaz0TPEyUww4AiV8"
-    
-    if BOT_TOKEN == "8778052231:AAFYoWr4wayExTzQq-elaz0TPEyUww4AiV8":
-        logger.error("Необходимо указать токен бота!")
+    if not BOT_TOKEN:
+        logger.error("Необходимо указать токен бота в переменной BOT_TOKEN!")
         return
     
+    logger.info("Бот запускается...")
     application = Application.builder().token(BOT_TOKEN).build()
     
     # Регистрация обработчиков команд
