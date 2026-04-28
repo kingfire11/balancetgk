@@ -26,7 +26,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Константы API
-API_BASE = "https://api.tkbk.io"
+API_BASE = "https://api.apiclaudecode.cloud"
 
 # Токен бота
 BOT_TOKEN = os.getenv("BOT_TOKEN", "8778052231:AAFYoWr4wayExTzQq-elaz0TPEyUww4AiV8")
