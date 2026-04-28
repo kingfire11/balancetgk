@@ -178,9 +178,9 @@ async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     """Главная функция запуска бота"""
     # Вставьте ваш токен бота здесь
-    BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+    BOT_TOKEN = "8778052231:AAFYoWr4wayExTzQq-elaz0TPEyUww4AiV8"
     
-    if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
+    if BOT_TOKEN == "8778052231:AAFYoWr4wayExTzQq-elaz0TPEyUww4AiV8":
         logger.error("Необходимо указать токен бота!")
         return
     
